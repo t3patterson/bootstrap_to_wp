@@ -1,0 +1,2 @@
+[07-Dec-2015 03:23:59 UTC] PHP Parse error:  syntax error, unexpected '"hiiii"' (T_CONSTANT_ENCAPSED_STRING) in /Applications/MAMP/htdocs/bootstrap_to_wp/wp-content/themes/bootstrap_tm/index.php on line 8
+[07-Dec-2015 03:24:00 UTC] PHP Parse error:  syntax error, unexpected '"hiiii"' (T_CONSTANT_ENCAPSED_STRING) in /Applications/MAMP/htdocs/bootstrap_to_wp/wp-content/themes/bootstrap_tm/index.php on line 8

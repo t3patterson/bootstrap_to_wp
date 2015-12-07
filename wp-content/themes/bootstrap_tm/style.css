@@ -1,3 +1,11 @@
+*, *:before, *:after{
+  box-sizing: border-box;
+}
+
 body {
   background: tomato;
+}
+
+.admin-bar .navbar-fixed-top{
+  margin-top: 30px;
 }

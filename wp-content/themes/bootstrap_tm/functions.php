@@ -34,21 +34,33 @@
       false  
     );
 
-     wp_register_script(
-      'respond_js', 
-      'https://oss.maxcdn.com/respond/1.4.2/respond.min.js', 
-      '', 
-      '', 
-      false  
-    );
-
     $wp_scripts->add_data('html5_shiv', 'conditional', 'lt IE 9');
     $wp_scripts->add_data('respond_js', 'conditional', 'lt IE 9');
 
-    wp_enqueue_script('bootstrap_js', theme_dir() . '/js/bootstrap.min.js', array('jquery') , true);
-    wp_enqueue_script('app', theme_dir() . '/js/app.js', array('bootstrap_js'), true);
+    wp_enqueue_script('bootstrap_js', theme_dir() . '/js/bootstrap.min.js', ['jquery'] , true);
+    wp_enqueue_script('app', theme_dir() . '/js/app.js', ['bootstrap_js'], true);
   }
 
   add_action('wp_enqueue_scripts', 'theme_js');
+
+
+  //Adding theme support
+  
+  //allows us to create a new header menu on the backend that will also show on the frontend
+  add_theme_support('menus');
+
+  function register_theme_menus(){
+    register_nav_menus(
+      [
+        'header-menu' => __('Header Menu')
+      ]
+    ); 
+  }
+
+  add_action('init', 'register_theme_menus' );
+  
+
+  
+  
 
 ?>

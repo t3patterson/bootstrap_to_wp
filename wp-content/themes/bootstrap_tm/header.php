@@ -19,6 +19,60 @@
         </div>
         <button type="submit" class="btn btn-success">Sign in</button>
       </form> -->
+      
+      <style>
+        .sub-menu {
+          display: block;
+
+        }
+        .sub-menu li a {
+            color: rgba(119, 119, 119, 1);
+            font-size: 14px;
+            line-height: 33px;
+            padding-bottom: 5px;
+            padding-left: 25px;
+            padding-right: 15px;
+            padding-top: 5px;
+            text-align: left;
+            text-decoration: none;
+          }
+
+          .sub-menu li:hover a {
+            color: rgba(255,255,255,1) ;
+          }
+
+      @media screen and (min-width: 768px) {
+        
+        .sub-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            z-index: 1000;
+            display: none;
+            min-width: 160px;
+            padding: 5px 0;
+            font-size: 14px;
+            text-align: left;
+            list-style: none;
+            background-color: rgba(34, 34, 34, 1);
+            border: 1px solid rgba(0,0,0,.15);
+            -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+            box-shadow: 0 6px 12px rgba(0,0,0,.175);
+          }
+
+
+          .menu-item:hover .sub-menu {
+            display: block;
+          }
+
+          .sub-menu:hover{
+            display: block;
+          }
+
+        
+      }
+
+      </style>
 
       <?php 
         $args=[

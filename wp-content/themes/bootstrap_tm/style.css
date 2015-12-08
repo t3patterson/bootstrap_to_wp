@@ -1,10 +1,22 @@
+/*---------------------*/
+/*---  Universals ---*/
+/*---------------------*/
+
 *, *:before, *:after{
   box-sizing: border-box;
 }
 
-body {
-  background: tomato;
+ul {
+  padding: 0;
 }
+
+/*---   ---*/
+
+
+body {
+}
+
+
 
 .admin-bar .navbar-fixed-top{
   margin-top: 30px;

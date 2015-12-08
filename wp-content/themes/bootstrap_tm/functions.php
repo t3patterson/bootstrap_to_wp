@@ -1,7 +1,7 @@
 <?php 
-
+//-------------
 // Set up CSS file-loading
-  
+//-------------
   function theme_dir() {
    return get_template_directory_uri();
   }
@@ -13,8 +13,10 @@
 
   add_action('wp_enqueue_scripts', 'theme_styles');
 
-
+//-------------
 // Set up JS script-loading
+//-------------
+
   function theme_js(){
     global $wp_scripts;
 
@@ -43,9 +45,10 @@
 
   add_action('wp_enqueue_scripts', 'theme_js');
 
-
+  //-------------
   //Adding theme support
-  
+  //-------------
+
   //allows us to create a new header menu on the backend that will also show on the frontend
   add_theme_support('menus');
 
@@ -60,7 +63,28 @@
   add_action('init', 'register_theme_menus' );
   
 
-  
-  
+  //-------------
+  //creting/registering a sidebar widget
+  //------------
+  function create_widget($name, $id, $description){
+
+    $widget_options = [
+      'name' => __($name),
+      'id' => $id,
+      'description' => __($description),
+      'before_widget' => '<div class="widget">',
+      'after_widget' => '</div>',
+      'before_title' => '<h3>',
+      'after_title' => '</h3>'
+    ];
+
+    register_sidebar($widget_options);
+  }
+
+  create_widget('Front Page Left', 'front-left', 'Displays on left of hompage');
+  create_widget('Front Page Center', 'front-center', 'Displays on center of hompage');
+  create_widget('Front Page Right', 'front-right', 'Displays on right of hompage');
+
+  create_widget('Page Sidebar', 'page', 'Displays on pages w sidebar')
 
 ?>

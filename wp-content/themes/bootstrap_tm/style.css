@@ -59,8 +59,49 @@ ul.sub-menu {
 
 /*---*/
 article.post {
-    margin-bottom: 40px;
+    margin-top: 60px;
 }
+
+/*--Single page blog....w/ comments-*/
+section.blog-comment-style{
+ background: #eee;
+}
+
+section.blog-comment-style{
+ background: #eee;
+ color: #888;
+ padding: 20px;
+}
+
+section.blog-comment-style h3{
+ font-size: 21px;
+}
+
+section.blog-comment-style .logged-in-as {
+  font-style: italic;
+}
+
+section.blog-comment-style .logged-in-as a:last-of-type:before{
+  content:"|  ";
+}
+
+
+section.blog-comment-style label{
+  display: block;
+}
+
+section.blog-comment-style .form-submit {
+  text-align: right;
+}
+
+aside.comment {
+  padding: 15px 0;
+}
+
+aside.comment:nth-of-type(2n){
+  background: #fafafa;
+}
+
 
 /*--- Med-Screen+ Styles  ---*/
 

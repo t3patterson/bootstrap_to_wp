@@ -16,16 +16,18 @@
         ?> 
           <article class="post">
              <h2> <a href="<?php the_permalink(); ?>"><?php the_title(); ?>  </a> </h2>
-             <p><strong>
+             <p><em>
                 By <?php the_author(); ?> 
                 on <?php echo the_time('l, F jS, Y'); ?>
                 <br>
                 <small>in <?php the_category(', ') ?>.</small> 
                 <br/>
-             </strong></p>
+             </em></p>
              <p class="text-right"> <a href="<?php comments_link(); ?>"><?php comments_number(); ?></a></p>
 
-             <?php the_content(); ?>
+             <?php the_excerpt(); ?>
+              <hr>
+
           </article>
              <?php endwhile; // endwhile ?>
         <?php } else { ?>

@@ -35,18 +35,20 @@ nav ~ .container {
   color: #444;
 }
 /*---*/
-.sub-menu {
-  display: block;
+ul.sub-menu {
+  padding-left: 20px;
+  padding-right: 10px;
+}
+
+.sub-menu li {
+  padding-top: 5px;
+  padding-bottom: 5px;
+
 }
 
 .sub-menu li a {
     color: rgba(119, 119, 119, 1);
     font-size: 14px;
-    line-height: 33px;
-    padding-bottom: 5px;
-    padding-left: 25px;
-    padding-right: 15px;
-    padding-top: 5px;
     text-align: left;
     text-decoration: none;
   }
@@ -55,6 +57,10 @@ nav ~ .container {
   color: rgba(255,255,255,1);
 }
 
+/*---*/
+article.post {
+    margin-bottom: 40px;
+}
 
 /*--- Med-Screen+ Styles  ---*/
 

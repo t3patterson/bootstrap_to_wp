@@ -20,6 +20,15 @@ Where `theme_styles` is a function that has `wp_enqueue_style («title», «uri�
 
 where `theme_js` is a function that registers scripts (with `wp_register_script`) and enqueues them (`wp_enqueue_script`)
 
+#####Theme support
+`add_theme_support(«theme-name»)` for Custom Post Types UI
+
+
+**Themes**
+- menus
+- post-thumbnails (*with*)
+
+
 #####Keyword-pages - `«sth».php`
 - `index.php`
 - `header.php`
@@ -112,3 +121,8 @@ if ( have_comments() ) {
 }
 ?>
 ```
+
+
+###Plugins To Explore
+- Advanced Custom Fields
+- Custom Post Type

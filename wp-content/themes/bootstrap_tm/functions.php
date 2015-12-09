@@ -52,6 +52,10 @@
   //allows us to create a new header menu on the backend that will also show on the frontend
   add_theme_support('menus');
 
+  //allows us to create custom post types that lets us dynamically populate posts w images
+  add_theme_support('post-thumbnails'); 
+
+
   function register_theme_menus(){
     register_nav_menus(
       [

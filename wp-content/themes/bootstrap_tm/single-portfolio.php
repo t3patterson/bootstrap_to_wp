@@ -26,6 +26,7 @@
               $tn_id = get_post_thumbnail_id();
               $tn_url = wp_get_attachment_image_src($tn_id, 'thumbnail-size',true);
             ?>
+            
             <img src="<?php echo $tn_url[0] ?>" alt="<?php echo   the_title(); ?>">
           </div>
 

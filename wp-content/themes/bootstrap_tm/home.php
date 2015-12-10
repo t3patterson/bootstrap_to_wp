@@ -9,6 +9,79 @@
           <?php wp_title(''); ?>
           </h1>
         </div>
+
+        <?php   
+          $options = [
+            'post_type' => 'post',
+            'category_name'=> 'featured'
+          ];
+
+          $qry = new WP_Query($options)
+         ?>
+
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+           <?php 
+              if ( have_posts() ){ 
+                while( $qry->have_posts() ) {
+                  $qry->the_post();
+                  $index = $qry->current_post;
+
+                  ($index == 0) ? $state = 'active': $state = ''
+            ?>
+            
+              <li 
+                data-target="#carousel-example-generic" 
+                data-slide-to="<?php echo $index ?>" 
+                class="<?php echo $state ?>">
+              </li>
+            
+            <?php 
+              }}
+              rewind_posts();
+            ?>          
+
+
+          </ol>
+
+
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner" role="listbox">
+          
+            <?php 
+               if( have_posts() ){ 
+                 while( $qry->have_posts() ){
+                   $qry->the_post();
+
+                   $tn_id = get_post_thumbnail_id();
+                   $tn_url = wp_get_attachment_image_src($tn_id, 'thumbnail-size', true);
+                   $tn_meta = get_post_meta($tn_id, '_wp_attachment_image_alt', true);
+
+                   $index = $qry->current_post;
+                   ($index == 0) ? $state = 'active' : $state = ''
+             ?>
+              <div class="item <?php echo $state ?>">
+                <img src="<?php echo $tn_url[0] ?>" alt="<?php echo $tn_meta; ?>">
+                <div class="carousel-caption"><?php the_title(); ?></div>
+              </div>
+              <?php 
+              }} 
+              rewind_posts();
+              ?>
+          </div>
+
+          <!-- Controls -->
+          <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+
        
         <?php if (have_posts()) { 
             while( have_posts() ) : 

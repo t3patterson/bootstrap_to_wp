@@ -10,6 +10,10 @@ ul {
   padding: 0;
 }
 
+img {
+  max-width: 100%;
+}
+
 body {
   padding-top: 50px;
 }
@@ -67,6 +71,8 @@ article.post {
 }
 
 /*--Single page blog....w/ comments-*/
+
+
 section.blog-comment-style{
  background: #eee;
 }

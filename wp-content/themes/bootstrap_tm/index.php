@@ -1,22 +1,27 @@
+<?php get_header(); ?>
 
-    <?php get_header(); ?>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9">
+        <?php if (have_posts()) { 
+            while( have_posts() ) : the_post(); ?> 
+            <div class="page-header">
+              <h1> 
+              <?php the_title(); ?>
+              </h1>
+            </div>
+            <?php the_content(); ?>
+        <?php endwhile; 
+        } else { ?>
+        <h3>No content here</h3>
+        <?php } ?>
+      </div>
     
-     <h1>INDEX</h1>
 
-      <div class="container">
-        <!-- Example row of columns -->
-        <div class="row">
-          <div class="col-md-9">
-            <h2>Heading </h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-          </div>
-          <div class="col-md-3">
-            <h2>Heading</h2>
-            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-          </div>
-      </div> <!-- /container -->
-    <?php get_footer(); ?>
+     <?php get_sidebar(); ?>
+
+  </div> 
+
+<?php get_footer(); ?>
 
 
